@@ -9,6 +9,10 @@
     "activeTab"
   ],
   "icons": {
+    "16" : "highlight_16.png",
+    "32" : "highlight_32.png",
+    "48" : "highlight_48.png",
+    "128" : "highlight_128.png"
   },
   "background": {
     "scripts": ["background.js"],
@@ -16,12 +20,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
-      "js": ["contentScript.js"]
+    "matches": ["<all_urls>"],
+    "js": ["contentScript.js"]
     }
   ],
-  "page_action": {
-    "default_popup": "popup.html"
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16" : "highlight_16.png",
+      "32" : "highlight_32.png",
+      "48" : "highlight_48.png",
+      "128" : "highlight_128.png"
+    }
   },
   "manifest_version": 2
 }

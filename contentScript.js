@@ -1,8 +1,12 @@
 
+chrome.runtime.onMessage.addListener(
 
-const re = new RegExp('bear', 'gi')
-const matches = document.documentElement.innerHTML.matches(re)
-chrome.runtime.sendMessage({
-  url: window.location.href,
-  count: matches.length
-})
+	function (message, sender, sendresponse) {
+		console.log(message);
+		let found;
+		let text = document.getElementsByTagName("*");
+		document.body.innerHTML = document.body.innerHTML.replace(new RegExp(message, "g"), 'cat'+message);
+
+			}
+
+);
