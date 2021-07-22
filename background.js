@@ -1,22 +1,30 @@
 
+// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+//   bears[request.url] = request.count
+//   console.log(request.count)
+// }
+// )
 
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.contextMenus.create({
+      title: 'Highlighter',
+      id: 'menu1', // you'll use this in the handler function to identify this context menu item
+      contexts: ['selection'],
+  });
+});
 
-
-
-
-const re = new RegExp('bear', 'gi')
-const matches = document.documentElement.innerHTML.matches(re)
-chrome.runtime.sendMessage({
-  url: window.location.href,
-  count: matches.length
-})
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+  if (info.menuItemId === "menu1") { // here's where you'll need the ID
+      console.log("info:",info)
+      console.log("tab:",tab)
+  }
+});
 // chrome.browserAction.onClicked.addListener((tab) => {
 //   chrome.scripting.executeScript({
 //     target: { tabId: tab.id },
 //     function: reddenPage
 //   });
 // });
-console.log('cat')
 // window.action.onClicked.addListener((tab) => {
 //   chrome.scripting.executeScript({
 //     target: { tabId: tab.id },
@@ -31,6 +39,8 @@ chrome.tabs.onUpdated.addListener( function (tab) {
   console.log('works')
 
 })
+
+
 
 // chrome.tabs.getCurrent(function(tab){
 //   let tabId = tab.id;
