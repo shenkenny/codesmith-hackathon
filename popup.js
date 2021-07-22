@@ -3,17 +3,23 @@ document.addEventListener('DOMContentLoaded', function(){
     chrome.storage.local.get( function(items){
        for(let key in items){
           const div = document.createElement('div');
-          const span = document.createElement('span');
-          const li = document.createElement('li');
+          const ul = document.createElement('ul');
+          const h4 = document.createElement('h4');
 
-          span.innerText="-> "+key;
-          span.setAttribute('id', 'span');
-          li.innerText=items[key];
-          div.appendChild(span);
-          div.appendChild(li);
+          h4.innerHTML ="<h4>"+key+"</h4>";
+          div.appendChild(h4);
+          items[key].forEach((el) => {
+            const li = document.createElement('li');
+            li.innerHTML= el + '\n\n';
+            li.style.fontStyle='italic'
+            ul.appendChild(li);
+          })
+
           const last = document.getElementById('wrapper');
           last.appendChild(div);
+          last.appendChild(ul)
        }
+
 
     });
     let clear = document.getElementById('clear');
@@ -24,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 });
+
 chrome.storage.onChanged.addListener(function () {
  chrome.storage.local.get( function(items){
     for(let key in items){

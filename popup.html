@@ -2,25 +2,59 @@
 <html>
 
   <head>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&family=Cabin:wght@600&display=swap" rel="stylesheet">
     <style>
+
+      h3 {
+        font-family: 'Arvo', serif;
+        font-size: 25px;
+        color: #00214d;
+      }
+      p {
+        font-family: 'Cabin', sans-serif;
+      }
+
+      li {
+        margin-top: 5px;
+      }
+
      body{
        height:200px;
        width: 600px;
-       background-color: rgb(191, 253, 253);
+       background-color: #fffffe;
        overflow:auto;
-
      }
+
+     button {
+      background-color: #00ebc7;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      margin: 50px;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+     }
+     button:hover {
+      background-color: #ff5470;
+      color: white;
+    }
+
      #span{
      font-weight: bold;
      }
     </style>
   </head>
-  <header><h3><center>Highlighter</center></h3></header>
+  <header><h3><center>Highlightly</center></h3></header>
   <body>
     <div id='wrapper'>
+      <ul id='quotes'>
 
-
+      </ul>
   </div>
 
     <script src="popup.js"></script>

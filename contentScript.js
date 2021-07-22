@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener(
 		console.log(message);
 		let found;
 		let text = document.getElementsByTagName("*");
-		document.body.innerHTML = document.body.innerHTML.replace(new RegExp(message, "g"), 'cat'+message);
+		document.body.innerHTML = document.body.innerHTML.replace(new RegExp(message, "g"), '<mark>'+message+'</mark>');
 
 			}
 
