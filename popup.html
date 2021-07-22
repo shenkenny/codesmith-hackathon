@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    <meta charset=“UTF-8”>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&family=Cabin:wght@600&display=swap" rel="stylesheet">
@@ -14,6 +15,7 @@
       }
       p {
         font-family: 'Cabin', sans-serif;
+        color: #1b2d45;
       }
 
       li {
@@ -25,6 +27,7 @@
        width: 600px;
        background-color: #fffffe;
        overflow:auto;
+       color: #1b2d45;
      }
 
      button {
@@ -47,6 +50,14 @@
      #span{
      font-weight: bold;
      }
+
+     #madeby{
+      display: block;
+      float: right;
+      margin: 5px;
+      font-weight: bold;
+      color: #00214d;
+      }
     </style>
   </head>
   <header><h3><center>Highlightly</center></h3></header>
@@ -60,5 +71,12 @@
     <script src="popup.js"></script>
 
   </body>
-  <footer> <center><button id="clear">Clear</button></center></footer>
+  <footer>
+    <center>
+      <button id="clear">Clear</button>
+    </center>
+    </footer>
+    <footer>
+      <span id='madeby'>&#x1F6E0; Made by Oleksii & Michael &#x1F6E0;</span>
+    </footer>
 </html>

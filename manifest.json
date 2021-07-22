@@ -1,7 +1,7 @@
 {
-  "name": "Highlighter",
+  "name": "Highlightly",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Highlight to the moon!",
   "permissions": [
     "storage",
     "contextMenus",
